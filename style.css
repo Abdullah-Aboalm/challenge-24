@@ -1,0 +1,221 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Rubik', sans-serif;
+  background-color: #edf2f8;
+}
+
+/* card */
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.029);
+  border-radius: 10px;
+}
+
+.card img.main {
+  width: 40%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.card .right {
+  width: 60%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .right h2 {
+  font-size: 19px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #485566;
+}
+
+.card .right p.des {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #7d818c;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.card .right .profile {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.card .right .profile img.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.card .right .profile .info {
+  height: 100%;
+  margin-left: 15px;
+  flex: 1;
+}
+
+.card .right .profile .info h4 {
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.card .right .profile .info p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: grey;
+}
+
+.card .right .profile .share-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: white;
+  background-color: #eaeff5;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card .right .profile .share-cont i {
+  color: #5d5e5fae;
+  transition: 0.3s;
+}
+
+.card .right .profile .share-cont:hover {
+  background-color: #5d5e5f;
+}
+
+.card .right .profile .share-cont:hover > i {
+  color: white;
+}
+
+.share-color {
+  background-color: #5d5e5f !important;
+}
+
+.share-I-color {
+  color: white !important;
+}
+
+.card .right .profile .share {
+  position: absolute;
+  top: -55px;
+  width: 210px;
+  background-color: #3d4a58;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.144);
+  cursor: context-menu;
+  display: none;
+  align-items: center;
+}
+
+.fade {
+  display: flex !important;
+}
+
+.card .right .profile .share::before {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  right: 95px;
+  border: 10px solid;
+  border-color: #3d4a58 transparent transparent transparent;
+}
+
+.card .right .profile .share p.share-p {
+  display: inline-block;
+  letter-spacing: 5px;
+  color: #cacdcf;
+  margin-right: 10px;
+}
+
+.card .right .profile .share a {
+  display: inline-block;
+}
+
+.card .right .profile .share a i {
+  color: grey;
+  font-size: 25px;
+}
+
+.card .right .profile .share a:not(:last-of-type) {
+  margin-right: 10px;
+}
+
+.card .right .profile .share i:hover {
+  color: white;
+}
+
+/* mobile */
+
+@media screen and (max-device-width: 767px) {
+  .card {
+    width: 70%;
+    flex-direction: column;
+  }
+  .card img.main {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  .card .right {
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  .card .right .profile .share {
+    width: 190px;
+  }
+  .card .right .profile .share::before {
+    bottom: -18px;
+    right: 85px;
+  }
+  .card .right .profile .share a:not(:last-of-type) {
+    margin-right: 5px;
+  }
+  .card .right .profile .share p.share-p {
+    margin-right: 5px;
+  }
+}
+
+/* tablet */
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .card {
+    width: 60%;
+  }
+}
